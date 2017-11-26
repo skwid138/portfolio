@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MN Trails Finder</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon" />
+
+    <!-- Angular Material -->
+    <link href="vendors/angular-material/angular-material.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+    <!-- Angular and Angular-Route -->
+    <script src="vendors/angular/angular.js" charset="utf-8" type="text/javascript"></script>
+    <script src="vendors/angular-route/angular-route.js" charset="utf-8" type="text/javascript"></script>
+
+    <!-- Angular Material -->
+    <script src="vendors/angular-material/angular-animate.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="vendors/angular-material/angular-aria.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="vendors/angular-material/angular-messages.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="vendors/angular-material/angular-material.js" charset="utf-8" type="text/javascript"></script>
+
+    <!-- ngMessages -->
+    <script src="vendors/angular-messages/angular-messages.js" charset="utf-8" type="text/javascript"></script>
+
+    <!-- Filestack -->
+    <script charset="utf-8" type="text/javascript" src="//static.filestackapi.com/v3/filestack-0.9.9.js"></script>
+
+    <!-- sweetalert2 -->
+    <script src="vendors/sweetalert2/dist/sweetalert2.all.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="vendors/sweetalert2/dist/sweetalert2.min.js" charset="utf-8" type="text/javascript"></script>
+    <link rel="stylesheet" href="vendors/sweetalert2/dist/sweetalert2.min.css">
+
+    <!-- ngMap -->
+    <script src="vendors/ngmap/ng-map.js" charset="utf-8" type="text/javascript"></script>
+
+    <!-- Google Maps -->
+    <!-- <script src="https://maps.google.com/maps/api/js?libraries=placeses,visualization,drawing,geometry,places"></script> -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBduUwhIPZX7EA6_NRqwZRtxrw55asJcY0&lirbraries==placeses,visualization,drawing,geometry,places"
+        type="text/javascript"></script>
+
+
+    <!-- ********* Client Side ********* -->
+    <script src="scripts/client.js" charset="utf-8" type="text/javascript"></script>
+    <!-- Controllers -->
+    <script src="scripts/controllers/nav.controller.js" charset="utf-8" type="text/javascript"></script>
+    <script src="scripts/controllers/home.controller.js" charset="utf-8" type="text/javascript"></script>
+    <script src="scripts/controllers/admin.controller.js" charset="utf-8" type="text/javascript"></script>
+    <script src="scripts/controllers/add-trail.controller.js" charset="utf-8" type="text/javascript"></script>
+    <script src="scripts/controllers/my-trail.controller.js" charset="utf-8" type="text/javascript"></script>
+    <script src="scripts/controllers/trail.controller.js" charset="utf-8" type="text/javascript"></script>
+    <!-- Services -->
+    <script src="scripts/services/user.service.js" charset="utf-8" type="text/javascript"></script>
+    <script src="scripts/services/trail.service.js" charset="utf-8" type="text/javascript"></script>
+
+</head>
+
+<body ng-app="myApp">
+    <header>
+    </header>
+    <main>
+        <ng-view></ng-view>
+    </main>
+    <footer>
+        <div layout="row" layout-align="end center" layout-padding>
+            <p>&copy; Hunter Rancourt</p>
+            <md-button ng-href="https://www.linkedin.com/in/hunter-rancourt/" class="md-icon-button" aria-label="LinkedIn">
+                <md-tooltip md-direction="top">Check Me Out on LinkedIn</md-tooltip>
+                <md-icon md-svg-icon="images/svg/linked_in.svg"></md-icon>
+            </md-button>
+            <md-button ng-href="https://github.com/skwid138/portfolio" class="md-icon-button" aria-label="GitHub">
+                <md-tooltip md-direction="top">See this site on GitHub</md-tooltip>
+                <md-icon md-svg-icon="images/svg/github.svg"></md-icon>
+            </md-button>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This web app is for showcasing my code projects.",
+  "homepage": "rancourt.pro",
+  "main": "src/server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skwid138/portfolio"
+  },
+  "keywords": [
+    "Node.js",
+    "Javascript",
+    "Express"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "path": "^0.12.7",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  },
+  "author": {
+    "name": "Hunter Rancourt",
+    "email": "hunter.rancourt@gmail.com"
+  }
+}
