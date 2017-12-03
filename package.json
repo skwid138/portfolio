@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This web app is for showcasing my code projects.",
   "homepage": "http://rancourt.pro",
-  "main": "src/server.js",
+  "main": "server.js",
   "directories": {
     "test": "test"
   },
