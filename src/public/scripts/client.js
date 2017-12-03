@@ -1,8 +1,9 @@
 /*jshint esversion: 6 */
+"use strict";
 console.log('client.js sourced');
 
 // angular and sourced in modules
-var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
+const myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
 myApp.config(function ($routeProvider) {
 

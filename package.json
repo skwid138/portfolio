@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "This web app is for showcasing my code projects.",
-  "homepage": "rancourt.pro",
+  "homepage": "http://rancourt.pro",
   "main": "src/server.js",
   "directories": {
     "test": "test"
