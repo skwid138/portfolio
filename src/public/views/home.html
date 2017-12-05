@@ -1,3 +1,35 @@
 <section>
-    <a>home controller</a>
+    <md-content layout="row" layout-align="center start">
+        <md-card layout="column" flex="75">
+            <md-card-title layout="column">
+                <md-card-title-text layout-align="center center">
+                    <span class="md-headline">Hunter Rancourt</span>
+                    <span class="md-subhead">Software Engineer</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout="column" layout-align="center center">
+                <div layout="row">
+                    <img class="md-card-image" ng-src="images/me.JPG" />
+                </div>
+                <div layout="column">
+                    <p>
+                        bio here
+                    </p>
+                </div>
+            </md-card-content>
+            <md-card-footer>
+                <div layout="row" layout-align="end center">
+                    <p>&copy; Hunter Rancourt</p>
+                    <md-button ng-href="https://www.linkedin.com/in/hunter-rancourt/" class="md-icon-button" aria-label="LinkedIn">
+                        <md-tooltip md-direction="top">Check Me Out on LinkedIn</md-tooltip>
+                        <md-icon md-svg-icon="images/svg/linked_in.svg"></md-icon>
+                    </md-button>
+                    <md-button ng-href="https://github.com/skwid138/portfolio" class="md-icon-button" aria-label="GitHub">
+                        <md-tooltip md-direction="top">See this site on GitHub</md-tooltip>
+                        <md-icon md-svg-icon="images/svg/github.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-card-footer>
+        </md-card>
+    </md-content>
 </section>
