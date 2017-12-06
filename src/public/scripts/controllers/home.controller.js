@@ -4,7 +4,7 @@
 This controller is for the home view.
 - displays 
 */
-myApp.controller('HomeController', function (GithubService, $location) {
+myApp.controller('HomeController', function (GithubService, MailService, $mdDialog) {
     console.log('in HomeController');
     const vm = this;
 
@@ -12,6 +12,19 @@ myApp.controller('HomeController', function (GithubService, $location) {
     vm.user = GithubService.user;
     // github repo data
     vm.repos = GithubService.repos;
+
+    // dialog for contact
+    vm.contact = () => {
+       const confirm = $mdDialog.prompt()
+        .title('Contact Hunter')
+        .textContent('Send Hunter an email?')
+        .placeholder('Hello Hunter, my name is Jeff Goldblum and I like to meetup and talk about code.')
+        .ariaLabel('Email Message')
+        .ok('Okay')
+        .cancel('Cancel');
+
+        $mdDialog.show(confirm);
+    }; // end contact
 
 
     /************** $http **************/
