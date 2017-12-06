@@ -1,5 +1,11 @@
 /*jshint esversion: 6 */
 
+/*
+This service connects to github's API
+- gets repository information
+- gets user information
+*/
+
 myApp.service('GithubService', function ($http, $location) {
     console.log('in GithubService');
     const self = this;
