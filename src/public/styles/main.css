@@ -6,3 +6,11 @@
 .cardWidth {
     max-width: 1000px;
 }
+
+#dialogHeader {
+    margin: 5px;
+}
+
+#dialogText {
+    margin: 5px;
+}

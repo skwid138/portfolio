@@ -20,7 +20,23 @@
                 </div>
             </md-card-content>
             <md-card-actions>
-                <md-button ng-click="hc.contact()">Contact Hunter</md-button>
+                <md-button ng-click="hc.contactDialog($event)">Contact Hunter</md-button>
+
+                <div style="visibility: hidden">
+                    <div class="md-dialog-container" id="contactDialog">
+                        <md-dialog layout-padding>
+                            <h2 id="dialogHeader" class="centerText">Contact Hunter</h2>
+                            <p id="dialogText">
+                                <b>Phone:</b> 218-341-2264 &nbsp;|&nbsp;
+                                <b>Email:</b> hunter@rancourt.pro
+                                <br/>
+                                <br/> Send me an email
+                            </p>
+
+                        </md-dialog>
+                    </div>
+                </div>
+
             </md-card-actions>
             <md-card-footer>
                 <div layout="row" layout-align="end center">

@@ -13,18 +13,15 @@ myApp.controller('HomeController', function (GithubService, MailService, $mdDial
     // github repo data
     vm.repos = GithubService.repos;
 
-    // dialog for contact
-    vm.contact = () => {
-       const confirm = $mdDialog.prompt()
-        .title('Contact Hunter')
-        .textContent('Send Hunter an email?')
-        .placeholder('Hello Hunter, my name is Jeff Goldblum and I like to meetup and talk about code.')
-        .ariaLabel('Email Message')
-        .ok('Okay')
-        .cancel('Cancel');
 
-        $mdDialog.show(confirm);
-        // might make this static
+    // static dialog for contact
+    vm.contactDialog = (ev) => {
+        $mdDialog.show({
+            contentElement: '#contactDialog',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true
+        }); // end mdDialog
     }; // end contact
 
 
