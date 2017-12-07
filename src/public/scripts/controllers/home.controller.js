@@ -24,6 +24,7 @@ myApp.controller('HomeController', function (GithubService, MailService, $mdDial
         .cancel('Cancel');
 
         $mdDialog.show(confirm);
+        // might make this static
     }; // end contact
 
 
