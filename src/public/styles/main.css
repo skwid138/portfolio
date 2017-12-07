@@ -15,3 +15,11 @@
 .footerText {
     font-size: 10px;
 }
+
+.dialogInput {
+    margin: 5px 0px;
+}
+
+.inputDiv {
+    padding: 0px !important;
+}

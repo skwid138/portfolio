@@ -24,12 +24,12 @@
                     <div class="md-dialog-container" id="contactDialog">
                         <md-dialog layout-padding flex layout-gt-xs="column">
                             <h2 id="dialogHeader" class="centerText">Message Hunter</h2>
-                            <div layout-gt-sm="row" layout="column">
-                                <md-input-container flex-gt-sm>
+                            <div layout-gt-sm="row" layout="column" class="inputDiv">
+                                <md-input-container class="dialogInput" flex-gt-sm>
                                     <label>Email</label>
                                     <input ng-model="hc.sender" required type="email">
                                 </md-input-container>
-                                <md-input-container flex-gt-sm>
+                                <md-input-container class="dialogInput" flex-gt-sm>
                                     <label>Subject</label>
                                     <input ng-model="hc.subject" required type="text">
                                 </md-input-container>
