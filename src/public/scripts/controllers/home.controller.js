@@ -14,7 +14,7 @@ myApp.controller('HomeController', function (GithubService, MailService, $mdDial
     vm.repos = GithubService.repos;
 
 
-    // static dialog for contact
+    // static dialog for message button
     vm.contactDialog = (ev) => {
         $mdDialog.show({
             contentElement: '#contactDialog',
@@ -23,6 +23,10 @@ myApp.controller('HomeController', function (GithubService, MailService, $mdDial
             clickOutsideToClose: true
         }); // end mdDialog
     }; // end contact
+
+    vm.sendMessage = (subject, sender, message) => {
+
+    }; // end sendMessage
 
 
     /************** $http **************/

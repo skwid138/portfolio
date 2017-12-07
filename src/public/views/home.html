@@ -22,16 +22,23 @@
             <md-card-actions>
                 <div style="visibility: hidden">
                     <div class="md-dialog-container" id="contactDialog">
-                        <md-dialog layout-padding flex>
+                        <md-dialog layout-padding flex layout-gt-xs="column">
                             <h2 id="dialogHeader" class="centerText">Message Hunter</h2>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label>Email</label>
-                                <input ng-model="hc.sender" type="email">
-                            </md-input-container>
+                            <div layout-gt-sm="row" layout="column">
+                                <md-input-container flex-gt-sm>
+                                    <label>Email</label>
+                                    <input ng-model="hc.sender" required type="email">
+                                </md-input-container>
+                                <md-input-container flex-gt-sm>
+                                    <label>Subject</label>
+                                    <input ng-model="hc.subject" required type="text">
+                                </md-input-container>
+                            </div>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>Message</label>
-                                <textarea ng-model="hc.message" md-maxlength="1000" rows="5" md-select-on-focus></textarea>
+                                <textarea ng-model="hc.message" md-maxlength="1000" required rows="5" md-select-on-focus></textarea>
                             </md-input-container>
+
                             <div>
                                 <md-button class="md-raised md-warn" type="submit" ng-click="hc.sendMail()">Send!</md-button>
                             </div>
