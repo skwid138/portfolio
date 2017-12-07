@@ -38,9 +38,8 @@
                                 <label>Message</label>
                                 <textarea ng-model="hc.message" md-maxlength="1000" required rows="5" md-select-on-focus></textarea>
                             </md-input-container>
-
                             <div>
-                                <md-button class="md-raised md-warn" type="submit" ng-click="hc.sendMail()">Send!</md-button>
+                                <md-button class="md-raised md-warn" type="submit" ng-click="hc.sendMail(hc.subject, hc.sender, hc.message)">Send!</md-button>
                             </div>
                         </md-dialog>
                     </div>
