@@ -20,33 +20,49 @@
                 </div>
             </md-card-content>
             <md-card-actions>
-                <md-button ng-click="hc.contactDialog($event)">Contact Hunter</md-button>
-
                 <div style="visibility: hidden">
                     <div class="md-dialog-container" id="contactDialog">
-                        <md-dialog layout-padding>
-                            <h2 id="dialogHeader" class="centerText">Contact Hunter</h2>
-                            <p id="dialogText">
-                                <b>Phone:</b> 218-341-2264 &nbsp;|&nbsp;
-                                <b>Email:</b> hunter@rancourt.pro
-                                <br/>
-                                <br/> Send me an email
-                            </p>
-
+                        <md-dialog layout-padding flex>
+                            <h2 id="dialogHeader" class="centerText">Message Hunter</h2>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Email</label>
+                                <input ng-model="hc.sender" type="email">
+                            </md-input-container>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Message</label>
+                                <textarea ng-model="hc.message" md-maxlength="1000" rows="5" md-select-on-focus></textarea>
+                            </md-input-container>
+                            <div>
+                                <md-button class="md-raised md-warn" type="submit" ng-click="hc.sendMail()">Send!</md-button>
+                            </div>
                         </md-dialog>
                     </div>
                 </div>
 
             </md-card-actions>
-            <md-card-footer>
-                <div layout="row" layout-align="end center">
-                    <p>&copy; Hunter Rancourt</p>
+            <md-card-footer layout="row">
+                <div flex layout="row" layout-align="start center">
+                    <p class="footerText">
+                        &copy; Hunter Rancourt 2017
+                    </p>
+                </div>
+                <div flex layout="row" layout-align="center center">
+                    <p class="footerText textCenter">
+                        <b>Phone:</b> 218-341-2264 &nbsp;|&nbsp;
+                        <b>Email:</b> hunter@rancourt.pro
+                    </p>
+                </div>
+                <div flex layout="row" layout-align="end center">
+                    <md-button ng-click="hc.contactDialog($event)" class="md-icon-button" aria-label="Message">
+                        <md-tooltip md-direction="top">Send Me A Message</md-tooltip>
+                        <md-icon md-svg-icon="images/svg/mail.svg"></md-icon>
+                    </md-button>
                     <md-button ng-href="https://www.linkedin.com/in/hunter-rancourt/" class="md-icon-button" aria-label="LinkedIn">
-                        <md-tooltip md-direction="top">Check Me Out on LinkedIn</md-tooltip>
+                        <md-tooltip md-direction="top">Check Me Out On LinkedIn</md-tooltip>
                         <md-icon md-svg-icon="images/svg/linked_in.svg"></md-icon>
                     </md-button>
                     <md-button ng-href="https://github.com/skwid138/portfolio" class="md-icon-button" aria-label="GitHub">
-                        <md-tooltip md-direction="top">See this site on GitHub</md-tooltip>
+                        <md-tooltip md-direction="top">Check Me Out On GitHub</md-tooltip>
                         <md-icon md-svg-icon="images/svg/github.svg"></md-icon>
                     </md-button>
                 </div>

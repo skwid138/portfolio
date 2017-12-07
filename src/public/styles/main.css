@@ -8,9 +8,10 @@
 }
 
 #dialogHeader {
-    margin: 5px;
+    margin: 0px;
+    color: rgb(105, 105, 105)
 }
 
-#dialogText {
-    margin: 5px;
+.footerText {
+    font-size: 10px;
 }
