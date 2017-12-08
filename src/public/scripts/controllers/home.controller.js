@@ -24,8 +24,12 @@ myApp.controller('HomeController', function (GithubService, MailService, $mdDial
         }); // end mdDialog
     }; // end contact
 
+    // collects input from dialog and sends it Mail service
     vm.sendMessage = (subject, sender, message) => {
-
+        console.log('in sendMessage');
+        MailService.sendMail(subject, sender, message).then(() => {
+            $mdDialog.hide();
+        });
     }; // end sendMessage
 
 
