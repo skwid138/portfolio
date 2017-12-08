@@ -30,12 +30,11 @@
     "request": "^2.83.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.2",
     "chai": "^4.1.2",
     "mocha": "^4.0.1"
   },
   "author": {
     "name": "Hunter Rancourt",
-    "email": "hunter.rancourt@gmail.com"
+    "email": "hunter@rancourt.pro"
   }
 }
