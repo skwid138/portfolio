@@ -6,8 +6,8 @@ const router = express.Router();
 const request = require('request');
 
 // API Key & username environment variables
-let username = process.env.USER_NAME;
-let oauthToken = process.env.GIT_TOKEN;
+const username = process.env.USER_NAME;
+const oauthToken = process.env.GIT_TOKEN;
 
 // github API user options
 const user_options = {

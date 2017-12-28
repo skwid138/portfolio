@@ -18,7 +18,8 @@
   "keywords": [
     "Node.js",
     "Javascript",
-    "Express"
+    "Express",
+    "AngularJS"
   ],
   "license": "ISC",
   "dependencies": {
