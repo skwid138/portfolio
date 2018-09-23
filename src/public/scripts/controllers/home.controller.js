@@ -1,53 +1,44 @@
 /*jshint esversion: 6 */
 
 /*
-This controller is for the home view.
-- displays 
+* This controller is for the home view. 
 */
+
 myApp.controller('HomeController', function (GithubService, MailService, $mdDialog) {
-    console.log('in HomeController');
+    //console.log('in HomeController');
     const vm = this;
 
-    // github user data
-    vm.user = GithubService.user;
-    // github repo data
-    vm.repos = GithubService.repos;
+    vm.user = GithubService.user; // github user data
+    vm.repos = GithubService.repos; // github repo data
 
 
     // static dialog for message button
-    vm.contactDialog = (ev) => {
+    vm.contactDialog = ev => {
         $mdDialog.show({
             contentElement: '#contactDialog',
             parent: angular.element(document.body),
             targetEvent: ev,
-            clickOutsideToClose: true
-        }); // end mdDialog
+            clickOutsideToClose: true,
+        });
     }; // end contact
 
     // collects input from dialog and sends it Mail service
     vm.sendMessage = (subject, sender, message) => {
-        console.log('in sendMessage');
-        MailService.sendMail(subject, sender, message).then(() => {
-            $mdDialog.hide();
-        });
+		MailService.sendMail(subject, sender, message)
+			.then(() => $mdDialog.hide());
     }; // end sendMessage
 
 
     /************** $http **************/
 
     vm.setGithubObjects = () => {
-        console.log('in setGithubObjects');
-        // get github user info
-        GithubService.getGithubUser();
-        // get github repo info
-        GithubService.getGithubRepos();
+        GithubService.getGithubUser(); // get github user info
+        GithubService.getGithubRepos(); // get github repo info
     }; // end setGithubObjects
 
 
     /************** on page load **************/
 
-    // get github user and repo info
-    vm.setGithubObjects();
-
+    vm.setGithubObjects(); // get github user and repo info
 
 }); // end HomeController
