@@ -9,7 +9,12 @@ myApp.controller('HomeController', function (GithubService, MailService, $mdDial
     const vm = this;
 
     vm.user = GithubService.user; // github user data
-    vm.repos = GithubService.repos; // github repo data
+	vm.repos = GithubService.repos; // github repo data
+	vm.getYear = () => {
+		const date = new Date();
+		return (1900 + date.getYear());
+	}
+	console.log(vm.getYear());
 
 
     // static dialog for message button
