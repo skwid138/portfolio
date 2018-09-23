@@ -7,41 +7,25 @@ This service connects to github's API
 */
 
 myApp.service('GithubService', function ($http, $location) {
-    console.log('in GithubService');
+    //console.log('in GithubService');
     const self = this;
 
-    // github user data
-    self.user = { 
-        data: {} 
-    }; // end user
+    self.user = {data: {}}; // github user data
 
-    // github repo data
-    self.repos = { 
-        data: [] 
-    }; // end repos
-
-
+    self.repos = {data: []}; // github repo data
 
 /************** $http **************/
 
-    // get user data via github API
+    // get user data via github API and set user object values
     self.getGithubUser = () => {
-        console.log('in getGithubUser');
-        $http.get('/github/user').then((response) => {
-            // set user object values
-            self.user.data = response.data;
-        }); // end GET
+		$http.get('/github/user')
+			.then(response => self.user.data = response.data);
     }; // end getGithubUser
 
-    // get repo data via github API
+    // get repo data via github API and set repos object value
     self.getGithubRepos = () => {
-        console.log('in getGithubRepos');
-        $http.get('/github/repos').then((response) => {
-            // set repos object value
-            self.repos.data = response.data;
-        }); // end GET
+		$http.get('/github/repos')
+			.then(response => self.repos.data = response.data);
     }; // end getGithubRepos
-
-
 
 }); // end GithubService

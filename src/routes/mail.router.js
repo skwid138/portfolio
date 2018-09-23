@@ -1,18 +1,14 @@
 /*jshint esversion: 6 */
 
-// requires
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
-require('dotenv').config();
 
 // contact user
 const contactCredentials = {
     username: process.env.EMAIL_UN,
-    pw: process.env.EMAIL_PW
-}; // end contactCredentials
-
-// hunter's email
+    pw: process.env.EMAIL_PW,
+};
 const hunter = 'hunter@rancourt.pro';
 
 // setup email configuration
@@ -22,28 +18,24 @@ const transporter = nodemailer.createTransport({
     secure: true, // use SSL
     auth: {
         user: contactCredentials.username,
-        pass: contactCredentials.pw
-    } // end auth
+        pass: contactCredentials.pw,
+    },
 }); // end transporter
 
-// post route for sending emails to hunter 
-// and the sender from the contact user
+// post route for sending emails to hunter and the sender from the contact user
 router.post('/', (req, res) => {
-    console.log('in mail / post');
+    //console.log('in mail / post');
 
-    // email string of sender
-    const sender = req.body.sender;
-    // message string from sender
-    const message = req.body.message;
-    // subject string defined by sender
-    const subject = req.body.subject;
+    const sender = req.body.sender; // email string of sender
+    const message = req.body.message; // message string from sender
+    const subject = req.body.subject; // subject string defined by sender
 
     // object to send
     const mailConfig = {
         from: contactCredentials.username,
-        to: sender + ', ' + hunter,
+        to: `${sender}, ${hunter}`,
         subject: subject,
-        html: '<p>' + message + '</p>'
+        html: `<p>${message}</p>`,
     }; // end mailConfig
     
     // send message using the above information
@@ -52,11 +44,10 @@ router.post('/', (req, res) => {
             console.log('sendMail error: ', err);
             res.sendStatus(500);
         } else {
-            console.log('Message sent: ', info.messageId, info.response);
+            //console.log('Message sent: ', info.messageId, info.response);
             res.sendStatus(200);
-        } // end else
-    }); // end message
+        }
+    });
 }); // end post
 
-// export
 module.exports = router;

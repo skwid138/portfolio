@@ -1,12 +1,9 @@
 /*jshint esversion: 6 */
 
-// requires
 const express = require('express');
 const app = express();
 require('dotenv').config();
 const bodyParser = require('body-parser');
-// Using request module to make HTTP requests from the server
-// https://www.npmjs.com/package/request
 const request = require('request');
 const port = process.env.PORT || 7070;
 
@@ -25,10 +22,7 @@ const indexRouter = require('./routes/index.router');
 // use routes
 app.use('/github', githubRouter);
 app.use('/mail', mailRouter);
-
 app.use('/', indexRouter); // catch all must be last
 
 // server listening
-app.listen(port, () => {
-    console.log('Server listening on port: ', port);
-}); // end listen
+app.listen(port, () => console.log(`Server running on -> http://localhost:${port}`));
