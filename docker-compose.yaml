@@ -4,7 +4,7 @@ services:
     image: nginx:latest
     container_name: nginx
     volumes:
-      - /etc/nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/conf.d:/etc/nginx/conf.d
       - /var/www/portfolio:/var/www/portfolio
       - ./nginx/ssl:/etc/letsencrypt/live
     ports:
