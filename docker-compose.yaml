@@ -23,6 +23,15 @@ services:
     networks:
       - portfolio_network
 
+
+  node-weather-app:
+    container_name: node-weather-app
+    build: ./projects/node-weather-app/.
+    ports:
+      - "3000:3000"
+    networks:
+      - portfolio_network
+
   # app:
   #   image: your_app_image
   #   container_name: app_container
@@ -32,4 +41,3 @@ services:
 networks:
   portfolio_network:
     external: true
-  
