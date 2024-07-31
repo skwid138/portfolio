@@ -94,12 +94,14 @@
 			color: var(--highlightColor);
 		}
 
-		.maintenance-content footer {
+		.contact {
 			font-size: 1rem;
 			color: var(--textColor);
+			margin: 20px 0;
 		}
 
-		.maintenance-content footer a {
+		.contact a,
+		.coming-soon a {
 			background: linear-gradient(to bottom,
 					var(--highlightColor) 0%,
 					var(--highlightColor) 100%);
@@ -110,12 +112,95 @@
 			text-decoration: none;
 		}
 
-		.maintenance-content footer a:hover {
+		.contact a:hover,
+		.coming-soon a:hover {
 			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
 			background-position: 0 100%;
-			background-size: auto 2px;
+			background-size: auto 4px;
 			background-repeat: repeat-x;
 			text-decoration: none;
+		}
+
+		.coming-soon {}
+
+		/* CSS borrowed from Michelle Barker -- https://codepen.io/michellebarker/pen/poLoeRq */
+		@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			--h: 212deg;
+			--l: 43%;
+			--brandColor: hsl(var(--h), 71%, var(--l));
+			font-family: Montserrat, sans-serif;
+			margin: 0;
+			background-color: whitesmoke;
+		}
+
+		p {
+			margin: 0;
+			line-height: 1.6;
+		}
+
+		ol {
+			list-style: none;
+			counter-reset: list;
+			padding: 0 1rem;
+		}
+
+		li {
+			--stop: calc(100% / var(--length) * var(--i));
+			--l: 62%;
+			--l2: 88%;
+			--h: calc((var(--i) - 1) * (180 / var(--length)));
+			--c1: hsl(var(--h), 71%, var(--l));
+			--c2: hsl(var(--h), 71%, var(--l2));
+
+			position: relative;
+			counter-increment: list;
+			max-width: 45rem;
+			margin: 2rem auto;
+			padding: 2rem 1rem 1rem;
+			box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+			border-radius: 0.25rem;
+			overflow: hidden;
+			background-color: white;
+		}
+
+		li::before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 1rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: linear-gradient(to right, var(--c1) var(--stop), var(--c2) var(--stop));
+		}
+
+		h3 {
+			display: flex;
+			align-items: baseline;
+			margin: 0 0 1rem;
+			color: rgb(70 70 70);
+		}
+
+		@media (min-width: 40em) {
+			li {
+				margin: 3rem auto;
+				padding: 3rem 2rem 2rem;
+			}
+
+			h3 {
+				font-size: 2.25rem;
+				margin: 0 0 2rem;
+			}
+
+			h3::before {
+				margin-right: 1.5rem;
+			}
 		}
 	</style>
 </head>
@@ -123,15 +208,50 @@
 <body>
 	<main>
 		<div class="maintenance-wrap">
-			<div class="maintenance-anim">
-			</div>
+			<div class="maintenance-anim"></div>
 			<section class="maintenance-content">
 				<h1>Pardon our dust.</h1>
 				<p>This portfolio project is currently under construction, but check back frequently to see updates.</p>
+				<div class="contact">If you need to you can always <a href="mailto:hunter.rancourt@gmail.com">contact me</a>.
+				</div>
+			</section>
+			<section class="coming-soon">
+				<h2>Coming soon</h2>
+				<ol style="--length: 5" role="list">
+					<li style="--i: 1">
+						<h3><a href="/weather/">Weather App</a></h3>
+						<p>
+							Node.js, Express, GraphQL, React, and OpenWeatherMap API
+						</p>
+					</li>
+					<li style="--i: 2">
+						<h3><a href="/chat/">Real-Time Chat App</a></h3>
+						<p>
+							Go, Gorilla WebSocket, React, Redis
+						</p>
+					</li>
+					<li style="--i: 3">
+						<h3><a href="/finance/">Finance Managment Tool</a></h3>
+						<p>
+							Node.js, Express, PostgreSql, Vue.js
+						</p>
+					</li>
+					<li style="--i: 4">
+						<h3><a href="/data/">Data Visualizer</a></h3>
+						<p>
+							Python, Django, Flask, D3.js, React
+						</p>
+					</li>
+					<li style="--i: 5">
+						<h3><a href="/ecommerce/">E-Commerce App</a></h3>
+						<p>
+							Node.js, Express, MongoDB, React
+						</p>
+					</li>
+				</ol>
 			</section>
 		</div>
 	</main>
-	<footer>If you need to you can always <a href="mailto:hunter.rancourt@gmail.com">contact me</a>.
 </body>
 
 </html>
