@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hunter Rancourt Portfolio</title>
+
+  <style>
+    /* This CSS was borrowed from Kristin Brown -- https://codepen.io/misskbkb/pen/PrbZwX */
+    * {
+      font-family: sans-serif;
+      text-align: center;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 20px;
+      max-width: 830px;
+      animation: saw 2s ease-in-out infinite;
+
+    }
+
+    .saw {
+      display: inline-block;
+      height: 100px;
+      width: 400px;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    .undCons {
+      display: block;
+      font-weight: light;
+      font-size: 16px;
+      letter-spacing: 5px;
+    }
+
+    .middle {
+      border-style: solid solid dotted solid;
+      border-width: 2px 2px 5px;
+      text-align: center;
+    }
+
+
+    .handle {
+      width: 100px;
+    }
+
+    .leftHandle {
+      border-top-left-radius: 50px;
+    }
+
+    .innerLeftHandle {
+      border-top-left-radius: 40px;
+      border: solid 2px;
+      width: 60px;
+      height: 60px;
+      margin: 15px;
+    }
+
+    .rightHandle {
+      border-top-right-radius: 50px;
+    }
+
+    .innerRightHandle {
+      border-top-right-radius: 40px;
+      border: solid 2px;
+      width: 60px;
+      height: 60px;
+      margin: 15% 20%;
+    }
+
+    @keyframes saw {
+      0% {
+        transform: translateX(0px);
+      }
+
+      50% {
+        transform: translateX(50px);
+      }
+
+      100% {
+        transform: translateX(0px);
+      }
+    }
+
+    main,
+    footer {
+      margin: 50px 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="leftHandle handle saw">
+        <div class="innerLeftHandle"></div>
+      </div>
+      <div class="saw middle"></div>
+      <div class="rightHandle handle saw">
+        <div class="innerRightHandle"></div>
+      </div>
+    </div>
+    <p class="undCons">THIS WEATHER APP IS UNDER CONSTRUCTION</p>
+  </main>
+  <footer>If you need to you can always <a href="mailto:hunter.rancourt@gmail.com">contact me</a>.
+</body>
+
+</html>
