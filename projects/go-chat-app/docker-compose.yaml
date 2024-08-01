@@ -1,0 +1,32 @@
+services:
+  backend:
+    build: 
+      context: ./backend
+      args:
+        NODE_ENV: ${NODE_ENV:-production}
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+    depends_on:
+      - redis
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NODE_ENV: ${NODE_ENV:-production}
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+
+  redis:
+    image: "redis:alpine"
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+
+volumes:
+  redis_data:
