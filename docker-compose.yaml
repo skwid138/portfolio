@@ -32,6 +32,14 @@ services:
     networks:
       - portfolio_network
 
+  go-chat-app:
+    container_name: go-chat-app
+    build: ./projects/go-chat-app/.
+    ports:
+      - "8080:8080"
+    networks:
+      - portfolio_network
+
   # app:
   #   image: your_app_image
   #   container_name: app_container
