@@ -6,6 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Under Construction</title>
   <style>
+    /* Some of this CSS was borrowed from Kristin Brown -- https://codepen.io/misskbkb/pen/PrbZwX */
+    @import url("https://fonts.googleapis.com/css?family=Chivo|Roboto:500&display=swap");
+
+    :root {
+      --highlightColor: #ff9f1c;
+      --textColor: #070600;
+      --backgroundColor: #f7f7ff;
+    }
+
+    body {
+      font-family: "Chivo", sans-serif;
+      background: var(--backgroundColor);
+      color: var(--textColor);
+    }
+
     body,
     html {
       margin: 0;
@@ -20,17 +35,51 @@
     }
 
     #animation-container {
-      width: 300px;
-      height: 300px;
+      width: 400px;
+      height: auto;
+      margin: auto;
+    }
+
+    footer {
+      margin: auto;
+    }
+
+    .contact {
+      font-size: 1rem;
+      text-align: center;
+      color: var(--textColor);
+      margin: 20px 0;
+    }
+
+    .contact a {
+      background: linear-gradient(to bottom,
+          var(--highlightColor) 0%,
+          var(--highlightColor) 100%);
+      background-position: 0 100%;
+      background-repeat: repeat-x;
+      background-size: 1px 1px;
+      color: rgba(7, 6, 0, 0.7);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+      background-position: 0 100%;
+      background-size: auto 4px;
+      background-repeat: repeat-x;
+      text-decoration: none;
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 </head>
 
 <body>
-  <div id="animation-container"></div>
-  <h1>Under Construction</h1>
-  <p>Our site is currently under construction. Please check back later!</p>
+  <main>
+    <div id="animation-container"></div>
+    <section class="contact">If you need to you can always <a href="mailto:hunter.rancourt@gmail.com">contact me</a>.
+    </section>
+
+  </main>
 
   <script>
     const animationContainer = document.getElementById('animation-container');
