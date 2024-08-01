@@ -142,10 +142,16 @@
 			line-height: 1.6;
 		}
 
+		h2 {
+			font-size: 1.75rem;
+			;
+		}
+
 		ol {
 			list-style: none;
 			counter-reset: list;
 			padding: 0;
+			margin: 0;
 		}
 
 		li {
@@ -187,7 +193,7 @@
 
 		@media (min-width: 40em) {
 			li {
-				margin: 3rem auto;
+				margin: 2rem auto;
 				padding: 3rem 2rem 2rem;
 			}
 
@@ -200,6 +206,54 @@
 				margin-right: 1.5rem;
 			}
 		}
+
+		.links>* {
+			display: inline-block;
+			margin: auto 20px auto auto;
+		}
+
+		.links a {
+			height: auto;
+			width: auto;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		.links object {
+			pointer-events: none;
+			object-fit: contain;
+			width: 40px;
+			height: 100%;
+		}
+
+		.links .repo-button {
+			position: relative;
+		}
+
+		.links .repo-button::after {
+			content: "Checkout this codebase with all the projects!";
+			visibility: hidden;
+			width: 160px;
+			background-color: #555;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px 0;
+			position: absolute;
+			z-index: 1;
+			bottom: 125%;
+			/* Position the tooltip above the text */
+			left: 50%;
+			margin-left: -80px;
+			/* Center the tooltip */
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+
+		.links .repo-button:hover::after {
+			visibility: visible;
+			opacity: 1;
+		}
 	</style>
 </head>
 
@@ -210,7 +264,26 @@
 			<section class="maintenance-content">
 				<h1>Pardon our dust.</h1>
 				<p>This portfolio project is currently under construction, but check back frequently to see updates.</p>
-				<div class="contact">If you need to you can always <a href="mailto:hunter.rancourt@gmail.com">contact me</a>.
+				<div class="contact">
+					If you need to you can always <a href="mailto:hunter.rancourt@gmail.com">contact me</a>.
+				</div>
+				<div class="links">
+					<div class="github-button">
+						<a href="https://github.com/skwid138/" target="_blank" rel="noopener noreferrer">
+							<object type="image/svg+xml" data="assets/github-mark.svg" class="github-icon"></object>
+						</a>
+					</div>
+					<div class="ln-button">
+						<a href="https://www.linkedin.com/in/hunter-rancourt/" target="_blank" rel="noopener noreferrer">
+							<img src="assets/In-Blue-40.png" alt="LinkedIn's I N logo" role="button" decoding="async"
+								loading="lazy" />
+						</a>
+					</div>
+					<div class="repo-button">
+						<a href="https://github.com/skwid138/portfolio/" target="_blank" rel="noopener noreferrer">
+							<object type="image/svg+xml" data="assets/code.svg" class="repo-icon"></object>
+						</a>
+					</div>
 				</div>
 			</section>
 			<section class="coming-soon">
@@ -225,7 +298,7 @@
 					<li style="--i: 2">
 						<h3><a href="/chat/">Real-Time Chat App</a></h3>
 						<p>
-							Go, Gorilla WebSocket, React, Redis
+							Go, Gorilla WebSocket, Redis, Nextjs, React, Tailwind
 						</p>
 					</li>
 					<li style="--i: 3">
