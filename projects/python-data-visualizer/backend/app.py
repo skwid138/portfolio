@@ -1,10 +1,14 @@
-from flask import Flask, jsonify
+from flask import Flask, send_from_directory, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 @app.route('/')
 def index():
-    return jsonify({"message": "Welcome to the Data Visualization Dashboard API"})
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/<path:path>')
+def serve_static_files(path):
+    return send_from_directory(app.static_folder, path)
 
 @app.route('/api/data', methods=['GET'])
 def get_data():
