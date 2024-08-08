@@ -40,6 +40,14 @@ services:
     networks:
       - portfolio_network
 
+  python-data-visualizer:
+    container_name: python-data-visualizer
+    build: ./projects/python-data-visualizer/backend/.
+    ports:
+      - "5000:5000"
+    networks:
+      - portfolio_network
+
   # app:
   #   image: your_app_image
   #   container_name: app_container
