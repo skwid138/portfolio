@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import serve_static_index  # Import the custom view
 # from django.views.generic import TemplateView
-from django.views.generic import RedirectView
+#from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='/static/index.html', permanent=False)),
+    path('', serve_static_index, name='index'),  # Serve the main page directly from the static director
+    # path('', RedirectView.as_view(url='/static/index.html', permanent=False)),
     # path('', TemplateView.as_view(template_name="index.html")),  # Serve the main page
     path('visualizations/', include('visualizations.urls')),  # Include URLs from the visualizations app
 ]
