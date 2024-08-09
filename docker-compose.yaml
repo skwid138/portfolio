@@ -42,7 +42,7 @@ services:
 
   python-data-visualizer:
     container_name: python-data-visualizer
-    build: ./projects/python-data-visualizer/backend/.
+    build: ./projects/python-data-visualizer/.
     ports:
       - "5000:5000"
     networks:
