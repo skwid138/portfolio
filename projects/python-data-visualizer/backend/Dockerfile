@@ -2,13 +2,9 @@ FROM python:3
 
 WORKDIR /app
 
-ADD . /app
+COPY . .
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-
-# Make sure the script file is executable - this may be needed on GCP as I manually changed the file locally
-# RUN chmod +x /app/app.py
+RUN pip install -r /app/requirements.txt
 
 EXPOSE 5000
 
