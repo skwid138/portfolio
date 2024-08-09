@@ -43,6 +43,8 @@ services:
   python-data-visualizer:
     container_name: python-data-visualizer
     build: ./projects/python-data-visualizer/.
+    env_file:
+      - ./projects/python-data-visualizer/.env
     ports:
       - "8000:8000"
     networks:
