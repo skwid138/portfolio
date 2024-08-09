@@ -24,6 +24,10 @@ COPY --from=builder /app/out /app/static
 
 RUN pip install -r /app/requirements.txt
 
-EXPOSE 5000
+# Run collectstatic to gather all static files into STATIC_ROOT for production
+RUN python manage.py collectstatic --noinput
 
-CMD ["python", "-u", "app.py"]
+EXPOSE 8000
+
+# Run Django migrations and start the server using Gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "data_visualizer.wsgi:application"]
