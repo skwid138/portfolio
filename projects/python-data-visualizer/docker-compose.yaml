@@ -5,18 +5,14 @@ services:
       args:
         NODE_ENV: ${NODE_ENV:-production}
     ports:
-      - "5000:5000"
+      - "5001:5000"
     environment:
       - NODE_ENV=${NODE_ENV:-production}
 
-  frontend:
+  combined:
     build:
-      context: ./frontend
-      args:
-        NODE_ENV: ${NODE_ENV:-production}
+      context: .
     ports:
-      - "3000:3000"
-    depends_on:
-      - backend
+      - "5001:5000"
     environment:
       - NODE_ENV=${NODE_ENV:-production}
