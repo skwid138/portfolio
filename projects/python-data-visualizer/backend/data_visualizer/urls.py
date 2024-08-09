@@ -24,6 +24,7 @@ from .views import serve_static_index  # Import the custom view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('data_api.urls')),
     path('', serve_static_index, name='index'),  # Serve the main page directly from the static director
     # path('', RedirectView.as_view(url='/static/index.html', permanent=False)),
     # path('', TemplateView.as_view(template_name="index.html")),  # Serve the main page
