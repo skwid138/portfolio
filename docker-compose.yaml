@@ -50,6 +50,13 @@ services:
     networks:
       - portfolio_network
 
+  grid-traversal:
+    container_name: grid-traversal
+    build: ./projects/grid-traversal/.
+    volumes:
+      - ./projects/grid-traversal/dist:/dist
+    command: ["echo", "Grid Traversal build complete"]
+
   # app:
   #   image: your_app_image
   #   container_name: app_container

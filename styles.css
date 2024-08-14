@@ -139,7 +139,8 @@ body {
 }
 
 .contact a,
-.coming-soon a {
+.coming-soon a,
+#projects a {
   background: linear-gradient(to bottom,
       var(--highlightColor) 0%,
       var(--highlightColor) 100%);
@@ -151,7 +152,8 @@ body {
 }
 
 .contact a:hover,
-.coming-soon a:hover {
+.coming-soon a:hover,
+#projects a:hover {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
   background-position: 0 100%;
   background-size: auto 4px;
@@ -257,14 +259,20 @@ h3 {
   display: inline-block;
 }
 
-.links object {
+.links object,
+#projects object {
   pointer-events: none;
   object-fit: contain;
   width: 40px;
   height: 100%;
 }
 
-.links .repo-button {
+#projects>.project-wrapper>.repo-button>a {
+  background: unset;
+}
+
+.links .repo-button,
+#projects .repo-button {
   position: relative;
 }
 
